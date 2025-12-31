@@ -2,6 +2,7 @@ package com.talha.app_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +12,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity {
-
-    private MaterialButton btnLogin, btnRegister;
+public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -27,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        MaterialButton btnBack = findViewById(R.id.btnBack);
+        View tvRegister = findViewById(R.id.tvRegister);
 
-        btnLogin.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, login.class))
+        btnBack.setOnClickListener(v ->
+                startActivity(new Intent(login.this, MainActivity.class))
         );
 
-        btnRegister.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, signup.class))
+        tvRegister.setOnClickListener(v ->
+                startActivity(new Intent(login.this, signup.class))
         );
     }
 }
