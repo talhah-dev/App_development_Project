@@ -10,10 +10,10 @@
     <color name="input_stroke">#E5E7EB</color>
 
     <color name="text_gray">#6B7280</color>
-    <color name="primary_blue">#1E88E5</color>
+    <color name="primary_blue">#003096</color>
     <color name="hint_gray">#9CA3AF</color>
-    <color name="divider_gray">#E5E7EB</color>
 
+    <color name="divider_gray">#E5E7EB</color>
     <color name="dark_btn">#1F2937</color>
 
 </resources>

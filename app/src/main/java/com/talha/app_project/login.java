@@ -27,10 +27,15 @@ public class login extends AppCompatActivity {
         });
 
         MaterialButton btnBack = findViewById(R.id.btnBack);
+        MaterialButton btnLogin = findViewById(R.id.btnLogin);
         View tvRegister = findViewById(R.id.tvRegister);
 
         btnBack.setOnClickListener(v ->
                 startActivity(new Intent(login.this, MainActivity.class))
+        );
+
+        btnLogin.setOnClickListener(v ->
+                startActivity(new Intent(login.this, DashboardActivity.class))
         );
 
         tvRegister.setOnClickListener(v ->
