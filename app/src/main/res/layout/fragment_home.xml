@@ -163,8 +163,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="See All"
-        android:textColor="#9CA3AF"
-        android:textSize="12sp"
+        android:textColor="@color/primary_blue"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@id/tvContinue"
         app:layout_constraintEnd_toEndOf="parent" />
 
