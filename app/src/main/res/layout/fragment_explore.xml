@@ -331,7 +331,6 @@
                         app:layout_constraintTop_toBottomOf="@id/tvCardMeta1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -408,7 +407,6 @@
                         app:layout_constraintTop_toBottomOf="@id/tvCardMeta2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

@@ -7,11 +7,14 @@ public class Course {
     public int progress;
     public int imageRes;
 
+    public boolean enrolled;
+
     public Course(String title, String author, float rating, int progress, int imageRes) {
         this.title = title;
         this.author = author;
         this.rating = rating;
         this.progress = progress;
         this.imageRes = imageRes;
+        this.enrolled = false;
     }
 }
