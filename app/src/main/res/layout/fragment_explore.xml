@@ -62,7 +62,6 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:hintTextColor="#9CA3AF"
-        app:startIconDrawable="@android:drawable/ic_menu_search"
         app:startIconTint="#6B7280"
         app:endIconMode="clear_text"
         app:endIconTint="#6B7280"
@@ -308,29 +307,59 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnStart1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                    <LinearLayout
+                        android:id="@+id/rowActions1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Enroll"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="13sp"
-                        android:textColor="#FFFFFF"
-                        app:backgroundTint="@color/primary_blue"
-                        app:cornerRadius="12dp"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:insetLeft="0dp"
-                        android:insetRight="0dp"
-                        android:insetTop="0dp"
-                        android:insetBottom="0dp"
+                        android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@id/tvCardMeta1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStart1"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="Enroll"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:textColor="#FFFFFF"
+                            app:backgroundTint="@color/primary_blue"
+                            app:cornerRadius="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetLeft="0dp"
+                            android:insetRight="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUnenroll1"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:text="Unenroll"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:textColor="#111827"
+                            app:backgroundTint="#F6F7FB"
+                            app:strokeColor="#E5E7EB"
+                            app:strokeWidth="1dp"
+                            app:cornerRadius="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetLeft="0dp"
+                            android:insetRight="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+                    </LinearLayout>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -384,29 +413,59 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnStart2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                    <LinearLayout
+                        android:id="@+id/rowActions2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Enroll"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="13sp"
-                        android:textColor="#FFFFFF"
-                        app:backgroundTint="@color/primary_blue"
-                        app:cornerRadius="12dp"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:insetLeft="0dp"
-                        android:insetRight="0dp"
-                        android:insetTop="0dp"
-                        android:insetBottom="0dp"
+                        android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@id/tvCardMeta2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStart2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="Enroll"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:textColor="#FFFFFF"
+                            app:backgroundTint="@color/primary_blue"
+                            app:cornerRadius="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetLeft="0dp"
+                            android:insetRight="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUnenroll2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:text="Unenroll"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:textColor="#111827"
+                            app:backgroundTint="#F6F7FB"
+                            app:strokeColor="#E5E7EB"
+                            app:strokeWidth="1dp"
+                            app:cornerRadius="12dp"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            android:insetLeft="0dp"
+                            android:insetRight="0dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"/>
+                    </LinearLayout>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

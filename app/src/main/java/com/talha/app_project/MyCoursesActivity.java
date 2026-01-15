@@ -19,28 +19,28 @@ public class MyCoursesActivity extends AppCompatActivity {
         View btnOpenGD = findViewById(R.id.btnOpenGD);
         if (btnOpenGD != null) {
             btnOpenGD.setOnClickListener(v -> {
-                // startActivity(new Intent(MyCoursesActivity.this, GraphicDesignCourseActivity.class));
+                 startActivity(new Intent(MyCoursesActivity.this, GraphicDesignCourseActivity.class));
             });
         }
 
         View btnOpenWF = findViewById(R.id.btnOpenWF);
         if (btnOpenWF != null) {
             btnOpenWF.setOnClickListener(v -> {
-                // startActivity(new Intent(MyCoursesActivity.this, WireframingCourseActivity.class));
+                 startActivity(new Intent(MyCoursesActivity.this, WireframingCourseActivity.class));
             });
         }
 
         View btnOpenWD = findViewById(R.id.btnOpenWD);
         if (btnOpenWD != null) {
             btnOpenWD.setOnClickListener(v -> {
-                // startActivity(new Intent(MyCoursesActivity.this, WebsiteDesignCourseActivity.class));
+                 startActivity(new Intent(MyCoursesActivity.this, WebsiteDesignCourseActivity.class));
             });
         }
 
         View btnOpenVE = findViewById(R.id.btnOpenVE);
         if (btnOpenVE != null) {
             btnOpenVE.setOnClickListener(v -> {
-                // startActivity(new Intent(MyCoursesActivity.this, VideoEditingCourseActivity.class));
+                 startActivity(new Intent(MyCoursesActivity.this, VideoEditingCourseActivity.class));
             });
         }
     }

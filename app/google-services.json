@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "754259225617",
+    "project_id": "cybex-97910",
+    "storage_bucket": "cybex-97910.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754259225617:android:3e5be337d1be5936c7d5b0",
+        "android_client_info": {
+          "package_name": "com.talha.app_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWyKo6qtjyDyPzX7E73P01k0xNz4dFszM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

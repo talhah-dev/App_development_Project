@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- REQUIRED for Firebase -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,18 +14,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_Project">
+
         <activity
             android:name=".MyCoursesActivity"
             android:exported="false" />
         <activity
+            android:name=".ChatRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+        <activity android:name=".GraphicDesignCourseActivity" />
+        <activity android:name=".WireframingCourseActivity" />
+        <activity android:name=".WebsiteDesignCourseActivity" />
+        <activity android:name=".VideoEditingCourseActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".NotificationsActivity" />
+
+
         <activity
             android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

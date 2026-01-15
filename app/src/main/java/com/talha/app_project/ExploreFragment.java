@@ -1,5 +1,6 @@
 package com.talha.app_project;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
+
 public class ExploreFragment extends Fragment {
+
+    private SharedPreferences prefs;
 
     @Nullable
     @Override
@@ -18,75 +23,51 @@ public class ExploreFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_explore, container, false);
     }
-}
 
-//package com.talha.app_project;
-//
-//import android.content.Context;
-//import android.content.SharedPreferences;
-//import android.content.res.ColorStateList;
-//import android.graphics.Color;
-//import android.os.Bundle;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//
-//import androidx.annotation.NonNull;
-//import androidx.annotation.Nullable;
-//import androidx.fragment.app.Fragment;
-//
-//import com.google.android.material.button.MaterialButton;
-//
-//public class ExploreFragment extends Fragment {
-//
-//    private static final String PREFS = "enroll_prefs";
-//    private static final String KEY_COURSE_1 = "enrolled_UI_Design_Essentials";
-//    private static final String KEY_COURSE_2 = "enrolled_Android_XML_Masterclass";
-//
-//    private MaterialButton btnStart1, btnStart2;
-//
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-//                             @Nullable Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_explore, container, false);
-//    }
-//
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        btnStart1 = view.findViewById(R.id.btnStart1);
-//        btnStart2 = view.findViewById(R.id.btnStart2);
-//
-//        SharedPreferences sp = requireContext().getSharedPreferences(PREFS, Context.MODE_PRIVATE);
-//
-//        boolean enrolled1 = sp.getBoolean(KEY_COURSE_1, false);
-//        boolean enrolled2 = sp.getBoolean(KEY_COURSE_2, false);
-//
-//        applyEnrollUi(btnStart1, enrolled1);
-//        applyEnrollUi(btnStart2, enrolled2);
-//
-//        btnStart1.setOnClickListener(v -> {
-//            sp.edit().putBoolean(KEY_COURSE_1, true).apply();
-//            applyEnrollUi(btnStart1, true);
-//        });
-//
-//        btnStart2.setOnClickListener(v -> {
-//            sp.edit().putBoolean(KEY_COURSE_2, true).apply();
-//            applyEnrollUi(btnStart2, true);
-//        });
-//    }
-//
-//    private void applyEnrollUi(MaterialButton button, boolean enrolled) {
-//        if (enrolled) {
-//            button.setText("Enrolled");
-//            button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#16A34A")));
-//            button.setTextColor(Color.WHITE);
-//        } else {
-//            button.setText("Enroll");
-//            button.setBackgroundTintList(ColorStateList.valueOf(requireContext().getResources().getColor(R.color.primary_blue)));
-//            button.setTextColor(Color.WHITE);
-//        }
-//    }
-//}
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        prefs = requireContext().getSharedPreferences("enroll_prefs", 0);
+
+        MaterialButton btnStart1 = view.findViewById(R.id.btnStart1);
+        MaterialButton btnUnenroll1 = view.findViewById(R.id.btnUnenroll1);
+
+        MaterialButton btnStart2 = view.findViewById(R.id.btnStart2);
+        MaterialButton btnUnenroll2 = view.findViewById(R.id.btnUnenroll2);
+
+        setupCourseButtons("course_1", btnStart1, btnUnenroll1);
+        setupCourseButtons("course_2", btnStart2, btnUnenroll2);
+    }
+
+    private void setupCourseButtons(String key, MaterialButton enrollBtn, MaterialButton unenrollBtn) {
+        boolean enrolled = prefs.getBoolean(key, false);
+        applyState(enrolled, enrollBtn, unenrollBtn);
+
+        enrollBtn.setOnClickListener(v -> {
+            prefs.edit().putBoolean(key, true).apply();
+            applyState(true, enrollBtn, unenrollBtn);
+        });
+
+        unenrollBtn.setOnClickListener(v -> {
+            prefs.edit().putBoolean(key, false).apply();
+            applyState(false, enrollBtn, unenrollBtn);
+        });
+    }
+
+    private void applyState(boolean enrolled, MaterialButton enrollBtn, MaterialButton unenrollBtn) {
+        if (enrolled) {
+            enrollBtn.setText("Enrolled");
+            enrollBtn.setEnabled(false);
+            enrollBtn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF16A34A));
+            unenrollBtn.setEnabled(true);
+            unenrollBtn.setAlpha(1f);
+        } else {
+            enrollBtn.setText("Enroll");
+            enrollBtn.setEnabled(true);
+            enrollBtn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF0B3B8C));
+            unenrollBtn.setEnabled(false);
+            unenrollBtn.setAlpha(0.5f);
+        }
+    }
+}

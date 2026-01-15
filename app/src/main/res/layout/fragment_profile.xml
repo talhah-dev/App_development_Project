@@ -100,19 +100,20 @@
                         android:id="@+id/imgAvatar"
                         android:layout_width="86dp"
                         android:layout_height="86dp"
-                        android:src="@drawable/ic_male_avatar"
+                        android:src="@drawable/profile"
                         android:scaleType="centerCrop"
-                        android:background="@android:color/transparent"
                         android:clipToOutline="true"
+                        android:background="@drawable/bg_circle_avatar"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
+
 
                     <TextView
                         android:id="@+id/tvName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="14dp"
-                        android:text="Muhammad Ali"
+                        android:text="Profile"
                         android:textColor="#0F172A"
                         android:textStyle="bold"
                         android:textSize="16sp"
@@ -138,7 +139,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Muhammad Ali is focused on improving design skills through structured courses, quizzes, and hands-on assignments."
+                        android:text="Focused on improving design skills through structured courses, quizzes, and hands-on assignments."
                         android:textColor="#334155"
                         android:textSize="12sp"
                         app:layout_constraintTop_toBottomOf="@id/imgAvatar"
@@ -285,7 +286,6 @@
                         android:textColor="#FFFFFF"
                         app:backgroundTint="@color/primary_blue"
                         app:cornerRadius="14dp" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

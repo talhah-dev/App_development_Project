@@ -16,28 +16,46 @@ import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.VH> {
 
-    private final List<Course> list;
+    // ✅ Click interface
+    public interface OnCourseClickListener {
+        void onCourseClick(Course course);
+    }
 
-    public CourseAdapter(List<Course> list) {
+    private final List<Course> list;
+    private final OnCourseClickListener listener;
+
+    // ✅ Updated constructor
+    public CourseAdapter(List<Course> list, OnCourseClickListener listener) {
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course, parent, false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_course, parent, false);
         return new VH(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VH h, int position) {
         Course c = list.get(position);
+
+        // ✅ Existing bindings (unchanged)
         h.ivThumb.setImageResource(c.imageRes);
         h.tvTitle.setText(c.title);
         h.tvAuthor.setText(c.author);
         h.ratingBar.setRating(c.rating);
         h.tvProgress.setText(c.progress + "% Done");
         h.progressBar.setProgress(c.progress);
+
+        // ✅ CLICK HANDLER
+        h.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onCourseClick(c);
+            }
+        });
     }
 
     @Override
